@@ -2,8 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-source /usr/share/git/git-prompt.sh
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -66,8 +64,6 @@ else
 fi
 unset color_prompt force_color_prompt
 
-cowfortune
-
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
     xterm*|rxvt*)
@@ -126,6 +122,8 @@ fi
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH=/home/ariel/.oclint-0.8.1/bin:$PATH
 
-#Timestamp
 alias timestamp="date +%Y%m%d%H%M%S"
 alias mysql_feed_manager="mysql -u root -p feed_manager"
+alias brubsay='echo "`cat /home/ariel/brubsay/phrases.txt | shuf -n 1`" | xcowsay --image=`ls /home/ariel/brubsay/*.png | shuf -n 1`'
+
+fortune | cowsay -f `ls /usr/share/cowsay/cows/ | shuf -n 1`
