@@ -1,0 +1,56 @@
+separator_block_width=30
+
+
+[unix]
+command=echo -n ''
+interval=once
+color=#ffffff
+
+
+[keyboard]
+label=
+command=setxkbmap -query | grep variant  | awk '{print $2}'
+interval=5
+color=#a6a6a6
+
+
+[temperature]
+label=
+command=/usr/lib/i3blocks/temperature
+interval=1
+color=#a6a6a6
+
+
+[cpu_usage]
+label=
+command=/usr/lib/i3blocks/cpu_usage
+interval=5
+color=$a6a6a6
+
+
+[volume]
+label= Volume:
+command=/usr/lib/i3blocks/volume
+interval=once
+signal=10
+color=#a6a6a6
+
+
+[memory]
+label=
+command=free -ht | grep "Total:" | awk '{print $3,"/",$2}'
+interval=5
+color=#a6a6a6
+
+
+[date]
+command=date "+%a %m-%d-%y"
+interval=3
+color=#ffffff
+
+
+[time_time]
+command=date "+%H:%M:%S"
+interval=1
+color=#ffffff
+
